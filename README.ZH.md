@@ -1,12 +1,30 @@
-## Hammer
+# Hammer
 
-强化Godot编辑器，像起源引擎Hammer编辑器一样强大  
+强化Godot的3D部分，像起源引擎Hammer编辑器一样强大易用  
 
 [English](https://github.com/godothub/hammer) &nbsp;&nbsp;&nbsp;&nbsp;[中文](https://github.com/godothub/hammer/blob/master/README.ZH.md)  
 
-## 路线图
+## 类开发
+* [ ] Option
+  * [ ] Keyboard
+  * [ ] Mouse
+  * [ ] Video
+  * [ ] Audio
+* [ ] NetWork
+  * [ ] Multiple
+  * [ ] TCP
+* [ ] Character
+  * [ ] Player
+  * [ ] NPC
+* [ ] Interact
+  * [ ] Trigger
+  * [ ] Action
+* [ ] Prop
+* [ ] Chapter
 
-1. 🟦平滑移动  
-2. 🟦按键自定义  
-3. 🟦关卡的顺序顺序设置  
-4. 🟦🟨✅...  
+## 自构建
+```
+- hammer
+- godot-cpp
+- godot-project
+```
