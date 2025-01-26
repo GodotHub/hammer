@@ -1,6 +1,7 @@
 #include "Register.h"
 
 #include "Character/Character.h"
+#include "Character/Pose.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -10,10 +11,13 @@ using namespace godot;
 
 void initialize_hammer_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+	
 		return;
 	}
 	
 	GDREGISTER_CLASS(Character);
+	GDREGISTER_CLASS(Pose);
+
 }
 
 void uninitialize_hammer_module(ModuleInitializationLevel p_level) {
@@ -23,7 +27,6 @@ void uninitialize_hammer_module(ModuleInitializationLevel p_level) {
 }
 
 extern "C" {
-// Initialization.
 GDExtensionBool GDE_EXPORT hammer_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
 	godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 

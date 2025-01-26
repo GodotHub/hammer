@@ -24,7 +24,42 @@
 
 ## 自构建
 ```
-- hammer
-- godot-cpp
-- godot-project
+- hammer/
+- godot-cpp/
+- godot-project/
+- SConstruct
 ```
+
+在 `SConstruct` 中编写如下内容
+
+```
+#!/usr/bin/env python
+import os
+import sys
+
+env = SConscript("godot-cpp/SConstruct") # type: ignore
+
+
+env.Append(CPPPATH=["hammer/"])
+sources = Glob("hammer/**/*.cpp")
+
+if env["platform"] == "macos":
+    library = env.SharedLibrary(
+        "demo/bin/libgdexample.{}.{}.framework/libgdexample.{}.{}".format(
+            env["platform"], env["target"], env["platform"], env["target"]
+        ),
+        source=sources,
+    )
+else:
+    library = env.SharedLibrary(
+        "godot-project/hammer/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        source=sources,
+    )
+
+Default(library) # type: ignore
+
+```
+
+在项目更目录下运行scons即可
+
+
