@@ -1,7 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Pose.h"
+#include "PoseGroup.h"
 #include <godot_cpp/classes/shape3d.hpp>
 #include <godot_cpp/classes/character_body3d.hpp>
 #include <godot_cpp/classes/collision_shape3d.hpp>
@@ -17,9 +17,10 @@ private:
 	CollisionShape3D *nodeCollision;
 	// Animation * nodeAnimation;
 
-	Ref<Shape3D> refShape; //形状
+	Ref<Shape3D> refShape;
+	Ref<PoseGroup> refPoseGroup;
 	
-	TypedArray<Pose> listPose;
+	// TypedArray<Pose> listPose;
 
 protected:
 	static void _bind_methods();
@@ -31,8 +32,11 @@ public:
 	Ref<Shape3D> getRefShape() const;
 	void setRefShape(Ref<Shape3D> _shape);
 
-	TypedArray<Pose> getListPose() const;
-	void setListPose(TypedArray<Pose> _list);
+	Ref<PoseGroup> getPoseGroup() const;
+	void setPoseGroup(Ref<PoseGroup> _pose_group);
+
+	// TypedArray<Pose> getListPose() const;
+	// void setListPose(TypedArray<Pose> _list);
 };
 
 }

@@ -33,30 +33,33 @@
 在 `SConstruct` 中编写如下内容
 
 ```
-#!/usr/bin/env python
 import os
 import sys
 
+path = "godot-project/hammer/"
+
 env = SConscript("godot-cpp/SConstruct") # type: ignore
 
-
 env.Append(CPPPATH=["hammer/"])
-sources = Glob("hammer/**/*.cpp")
+sources = Glob("hammer/Register.cpp")  # type: ignore
+sources.append(Glob("hammer/Character/Character.cpp")) # type: ignore
+sources.append(Glob("hammer/Character/Pose.cpp")) # type: ignore
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
-        "demo/bin/libgdexample.{}.{}.framework/libgdexample.{}.{}".format(
+        target = path + "hammer.{}.{}.framework/libgdexample.{}.{}".format(
             env["platform"], env["target"], env["platform"], env["target"]
         ),
-        source=sources,
+        source = sources,
     )
 else:
     library = env.SharedLibrary(
-        "godot-project/hammer/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
-        source=sources,
+        target = "godot-project/hammer/hammer{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        source = sources,
     )
 
-Default(library) # type: ignore
+
+Default(library)  # type: ignore
 
 ```
 
