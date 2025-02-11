@@ -2,9 +2,9 @@
 
 强化Godot的3D部分，像起源引擎Hammer编辑器一样强大易用  
 
-[English](https://github.com/godothub/hammer) &nbsp;&nbsp;&nbsp;&nbsp;[中文](https://github.com/godothub/hammer/blob/master/README.ZH.md)  
+[English](https://github.com/godothub/hammer)&nbsp;&nbsp;&nbsp;&nbsp;[中文](https://github.com/godothub/hammer/blob/master/README.ZH.md)  
 
-## 类开发
+## 类
 * [ ] Option
   * [ ] Keyboard
   * [ ] Mouse
@@ -16,6 +16,8 @@
 * [ ] Character
   * [ ] Player
   * [ ] NPC
+  * [x] Pose
+  * [x] PoseGroup
 * [ ] Interact
   * [ ] Trigger
   * [ ] Action
@@ -44,6 +46,7 @@ env.Append(CPPPATH=["hammer/"])
 sources = Glob("hammer/Register.cpp")  # type: ignore
 sources.append(Glob("hammer/Character/Character.cpp")) # type: ignore
 sources.append(Glob("hammer/Character/Pose.cpp")) # type: ignore
+sources.append(Glob("hammer/Character/PoseGroup.cpp")) # type: ignore
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
@@ -60,7 +63,6 @@ else:
 
 
 Default(library)  # type: ignore
-
 ```
 
 在项目更目录下运行scons即可

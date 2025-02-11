@@ -17,6 +17,7 @@ void initialize_hammer_module(ModuleInitializationLevel p_level) {
 	
 	GDREGISTER_CLASS(Character);
 	GDREGISTER_CLASS(Pose);
+	GDREGISTER_CLASS(PoseGroup);
 
 }
 
