@@ -1,7 +1,5 @@
 #include "Register.h"
 
-#include "Test.h"
-
 #include "Character/Pose.h"
 #include "Character/Character.h"
 
@@ -16,8 +14,7 @@ void initialize_hammer_module(ModuleInitializationLevel p_level) {
 	
 		return;
 	}
-	
-	GDREGISTER_CLASS(Test);
+
 
 	GDREGISTER_CLASS(Character);
 	GDREGISTER_CLASS(Pose);
