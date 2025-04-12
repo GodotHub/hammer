@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4nqhywxlyiut"]
+
+[ext_resource type="Script" uid="uid://btaxy5tykf4m" path="res://character.gd" id="1_ss4ru"]
+
+[node name="Character" type="Character"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+fileModel = "res://test.blend"
+platform_wall_layers = 4096
+script = ExtResource("1_ss4ru")
+
+[connection signal="ready" from="." to="." method="test"]

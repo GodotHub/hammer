@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4nqhywxlyiut"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_b7n17"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ouwy2"]
+
+[sub_resource type="Pose" id="Pose_gei5j"]
+Height = 2.485
+Speed = 5.37
+
+[sub_resource type="PoseGroup" id="PoseGroup_hlquw"]
+Group = Array[Pose]([SubResource("Pose_gei5j")])
+
+[node name="Character" type="Character"]
+refShape = SubResource("SeparationRayShape3D_ouwy2")
+refPoseGroup = SubResource("PoseGroup_hlquw")
+script = ExtResource("1_b7n17")
