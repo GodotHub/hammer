@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "scons",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "target=template_debug",
+                "debug_symbols=yes",
+            ],
+        }
+
+        
+    ]
+}
