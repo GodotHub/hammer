@@ -4,13 +4,9 @@
         {
             "label": "scons",
             "type": "shell",
-            "command": "scons",
-            "args": [
-                "target=template_debug",
-                "debug_symbols=yes",
-            ],
+            "command": "scons target=template_debug debug_symbols=yes",
         }
-
         
     ]
 }
+

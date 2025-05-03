@@ -6,9 +6,14 @@ HAMMER_PATH = "Hammer/"
 NATURE_PATH = "Nature/"
 
 env = SConscript("godot-cpp/SConstruct") # type: ignore
+env.Append(CPPPATH=[os.getcwd()])
 
-sources = Glob(HAMMER_PATH + "*.cpp")  # type: ignore
+sources = []
+
+sources.append(Glob(HAMMER_PATH + "*.cpp"))  # type: ignore
 sources.append(Glob(HAMMER_PATH + "Character/*.cpp")) # type: ignore
+
+sources.append(Glob(NATURE_PATH + "*.cpp"))  # type: ignore
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(

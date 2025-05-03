@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dfoxfwr7ijk4e"]
-
-[node name="OptionButton" type="OptionButton"]
-offset_right = 32.0
-offset_bottom = 20.0
-selected = 0
-item_count = 2
-popup/item_1/id = 1

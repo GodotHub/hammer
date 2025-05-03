@@ -6,6 +6,18 @@
         "string": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "list": "cpp",
+        "cstdlib": "cpp",
+        "unordered_map": "cpp",
+        "variant": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "span": "cpp",
+        "text_encoding": "cpp",
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "mutex": "cpp"
     }
 }

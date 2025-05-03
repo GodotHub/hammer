@@ -3,6 +3,8 @@
 #include "Character/Pose.h"
 #include "Character/Character.h"
 
+#include "SceneNode.h"
+
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
@@ -19,6 +21,8 @@ void initialize_hammer_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_CLASS(Character);
 	GDREGISTER_CLASS(Pose);
 	GDREGISTER_CLASS(PoseGroup);
+
+	GDREGISTER_CLASS(SceneNode);
 
 }
 
