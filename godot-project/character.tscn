@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://b4nqhywxlyiut"]
+[gd_scene load_steps=2 format=3 uid="uid://dluqitkofple6"]
 
-[node name="SceneNode" type="SceneNode"]
+[ext_resource type="Script" uid="uid://btaxy5tykf4m" path="res://character.gd" id="1_glpr6"]
+
+[node name="Character" type="Character"]
+script = ExtResource("1_glpr6")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1.0
+offset_right = 325.0
+offset_bottom = 76.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "111 1111"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "222 2222"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "333 3333"
+autowrap_mode = 3

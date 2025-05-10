@@ -25,7 +25,7 @@ namespace godot{
 //   }
 // ]
 // "next_directory":String
-// 
+// "next_struct":String
 // }
 
 class SceneNode : public Node{
@@ -57,8 +57,9 @@ public:
     SceneNode();
     ~SceneNode();
 
-    // int getNowScene();
-    // void setNowScene(int _now_scene);
+    int getNowScene();
+    void setNowScene(int _now_scene);
+    
     // Node getSceneNode();
 
     bool loadDirectory(const String *_directory, const String *_struct = nullptr);

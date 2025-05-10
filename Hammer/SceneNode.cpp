@@ -7,7 +7,7 @@ using namespace godot;
 void SceneNode::_bind_methods(){
     // ClassDB::bind_method(D_METHOD("getSceneIndex"), &SceneNode::getSceneIndex);
 	// ClassDB::bind_method(D_METHOD("setSceneIndex", "nowScene"), &SceneNode::setSceneIndex);
-    // ADD_PROPERTY(PropertyInfo(Variant::INT, "nowScene"), "setSceneIndex", "getSceneIndex");
+    ADD_PROPERTY(PropertyInfo(Variant::INT, "nowScene"), "setSceneIndex", "getSceneIndex");
 
     
 
@@ -19,12 +19,16 @@ void SceneNode::_bind_methods(){
 SceneNode::SceneNode(){
     sceneIndex = 0;
     sceneNode = nullptr;
+
+    savePath = "";
+    directoryPath = "";
+
+    nextDirectoryPath = "";
+    nextDirectoryStruct = "";
 }
 
 SceneNode::~SceneNode(){
-    if (sceneNode != nullptr){
-        sceneNode->queue_free();
-    }
+    if (sceneNode != nullptr){sceneNode->queue_free();}
 };
 
 bool SceneNode::loadDirectory(const String *_directory, const String *_struct){
@@ -49,6 +53,7 @@ bool SceneNode::loadDirectory(const String *_directory, const String *_struct){
     
     // String next_directory = struct_json[next_directory];
     nextDirectoryPath = struct_json["next_directory"];
+    nextDirectoryStruct = struct_json["next_struct"];
 
     directoryPath = *_directory;
     return true;
