@@ -56,7 +56,7 @@ void CaptionNode::removeCaption(int _index){
     updateHeight();
 }
 
-int CaptionNode::countLine(){
+int CaptionNode::countLine() const{
     int count = 0;
     int node_number = nodeContainer->get_child_count();
     for (int i = 0; i < node_number; i++){
@@ -66,3 +66,6 @@ int CaptionNode::countLine(){
     return count;
 }
 
+void CaptionNode::_bind_methods(){
+    
+}

@@ -20,7 +20,6 @@ private:
     int maxLine;
     VBoxContainer * nodeContainer;
     Control * nodeBackground;
-    // TypedArray<Label *> listLabel;
 
     void updateHeight();
 
@@ -30,7 +29,7 @@ public:
     CaptionNode();
     ~CaptionNode();
     
-    int countLine();
+    int countLine() const;
 
     void addCaption(const String *_content, const Color *_color = nullptr, const String *_source = nullptr);
     

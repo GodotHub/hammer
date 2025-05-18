@@ -6,6 +6,8 @@ Enable developers to focus on 3D game development, making Godot as simple as Ham
 &nbsp;&nbsp;&nbsp;&nbsp;
 [中文](https://github.com/godothub/hammer/blob/master/README.ZH.md)    
 
+> The frequency of English updates may be slightly slower than that of Chinese.
+
 ## DevelopmentRoadmap
 
 ### NodeFeatures
@@ -16,6 +18,11 @@ Enable developers to focus on 3D game development, making Godot as simple as Ham
 * [ ] ToolNode
 * [x] SceneNode
 * [x] CaptionNode
+
+* [x] MoudelGroup 
+* [x] ModuleRecource
+  * [ ] CaptionModule
+  * [ ] MoveModule
 
 ### InspectorFeatures
 * [ ] OptionNode

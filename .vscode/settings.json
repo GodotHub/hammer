@@ -18,6 +18,10 @@
         "text_encoding": "cpp",
         "compare": "cpp",
         "cstdint": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }

@@ -17,6 +17,11 @@
 * [x] SceneNode
 * [x] CaptionNode
 
+* [x] MoudelGroup 
+* [x] ModuleRecource
+  * [ ] CaptionModule
+  * [ ] MoveModule
+
 ### 检查器功能
 * [ ] OptionNode
 * [ ] NetWorkNode
