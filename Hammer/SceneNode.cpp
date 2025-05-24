@@ -13,16 +13,14 @@ void SceneNode::_bind_methods(){
 
 }
 
-// int SceneNode::getNowScene(){return nowSceneIndex;}
-// void SceneNode::setNowScene(int _now_scene){nowSceneIndex = _now_scene;}
 
 SceneNode::SceneNode(){
     sceneIndex = 0;
     sceneNode = nullptr;
-
+    
     savePath = "";
     directoryPath = "";
-
+    
     nextDirectoryPath = "";
     nextDirectoryStruct = "";
 }
@@ -30,6 +28,9 @@ SceneNode::SceneNode(){
 SceneNode::~SceneNode(){
     if (sceneNode != nullptr){sceneNode->queue_free();}
 };
+
+// int SceneNode::getNowScene(){return nowSceneIndex;}
+// void SceneNode::setNowScene(int _now_scene){nowSceneIndex = _now_scene;}
 
 bool SceneNode::loadDirectory(const String *_directory, const String *_struct){
     const String DEFAULT_STRUCT = "struct.json";

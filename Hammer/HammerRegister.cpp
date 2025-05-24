@@ -2,6 +2,7 @@
 
 #include "SceneNode.h"
 #include "CaptionNode.h"
+#include "OptionNode.h"
 
 #include "ModuleResource.h"
 #include "ModuleGroup.h"
@@ -24,6 +25,7 @@ void initialize_hammer_module(ModuleInitializationLevel p_level) {
 	// GDREGISTER_CLASS(PoseGroup);
 
 	GDREGISTER_CLASS(SceneNode);
+	GDREGISTER_CLASS(CaptionNode);
 	GDREGISTER_CLASS(CaptionNode);
 
 	GDREGISTER_CLASS(ModuleResource);

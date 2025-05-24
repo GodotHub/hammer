@@ -34,6 +34,13 @@ public:
     void addCaption(const String *_content, const Color *_color = nullptr, const String *_source = nullptr);
     
     void removeCaption(int _index = -1);
+
+    void setStayTime(int _stay_time);
+    int getStayTime() const;
+
+    void setMaxLine(int _max_line);
+    int getMaxLine() const;
+    
 };
 
 

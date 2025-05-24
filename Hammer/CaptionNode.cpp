@@ -3,8 +3,8 @@
 using namespace godot;
 
 CaptionNode::CaptionNode(){
-    stayTime = 5;
-    maxLine = 10;
+    setStayTime(5);
+    setMaxLine(10);
 
     nodeContainer = memnew(VBoxContainer);
     nodeContainer->set_anchors_preset(PRESET_BOTTOM_WIDE);
@@ -69,3 +69,9 @@ int CaptionNode::countLine() const{
 void CaptionNode::_bind_methods(){
     
 }
+
+void CaptionNode::setStayTime(int _stay_time){stayTime = _stay_time;}
+int CaptionNode::getStayTime() const{return stayTime;}
+
+void CaptionNode::setMaxLine(int _max_line){maxLine = _max_line;}
+int CaptionNode::getMaxLine() const{return maxLine;}

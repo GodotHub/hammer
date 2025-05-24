@@ -1,5 +1,5 @@
-#ifndef HAMMER_REGISTER_H
-#define HAMMER_REGISTER_H
+#ifndef HammerRegister_H
+#define HammerRegister_H
 
 #include <godot_cpp/core/class_db.hpp>
 

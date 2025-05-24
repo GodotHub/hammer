@@ -57,8 +57,9 @@ public:
     SceneNode();
     ~SceneNode();
 
-    int getNowScene();
-    void setNowScene(int _now_scene);
+    // int getNowScene();
+    // void setNowScene(int _now_scene);
+
     
     // Node getSceneNode();
 
