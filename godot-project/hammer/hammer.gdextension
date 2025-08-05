@@ -1,8 +1,0 @@
-[configuration]
-
-entry_symbol = "hammer_library_init"
-compatibility_minimum = "4.3"
-reloadable = true
-
-[libraries]
-windows.debug.x86_64 = "res://hammer/hammer.windows.template_debug.x86_64.dll"

@@ -12,17 +12,11 @@ Enable developers to focus on 3D game development, making Godot as simple as Ham
 
 ### NodeFeatures
 * [ ] OptionNode
-* [ ] NetWorkNode
-* [ ] CharacterNode
+* [ ] PlayerNode
 * [ ] InteractNode
 * [ ] ToolNode
-* [x] SceneNode
-* [x] CaptionNode
-
-* [x] MoudelGroup 
-* [x] ModuleRecource
-  * [ ] CaptionModule
-  * [ ] MoveModule
+* [ ] SceneNode
+* [ ] CaptionNode
 
 ### InspectorFeatures
 * [ ] OptionNode
