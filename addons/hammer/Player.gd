@@ -5,11 +5,9 @@ class_name Player
 
 @export var HeadNode:Node3D
 
-# func _init() -> void:
-
 func _ready() -> void:
 	if not HeadNode:
-		print("请配置 HeadNode")
+		print("需要配置 HeadNode")
 		queue_free()
 		return
 	
@@ -19,8 +17,16 @@ func _input(_event: InputEvent) -> void:
 	PlayerRotate(_event)
 
 func _physics_process(_delta: float) -> void:
-	PlayerMove(_delta)
+	if EnableNav:
+		Navigation(_delta)
+	else:
+		PlayerMove(_delta)
+	Move(_delta)
 
+
+	Tool(_delta)
+
+## 玩家旋转
 func PlayerRotate(_event: InputEvent) -> void:
 	if (_event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
 		rotate_object_local(Vector3.UP, deg_to_rad(- _event.relative.x * MouseSen))
@@ -28,9 +34,10 @@ func PlayerRotate(_event: InputEvent) -> void:
 		HeadNode.rotation.x = clamp(HeadNode.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func PlayerMove(_delta:float) -> void:
+	# 玩家移动
 	var input_vector:Vector3 = Vector3.ZERO
 	var body_basis:Basis = global_basis
-	
+
 	if Input.is_action_pressed("W"):
 		input_vector += -body_basis.z
 	if Input.is_action_pressed("S"):
@@ -39,18 +46,22 @@ func PlayerMove(_delta:float) -> void:
 		input_vector += -body_basis.x
 	if Input.is_action_pressed("D"):
 		input_vector += body_basis.x
-	
-	MoveDir = input_vector
 
+	MoveDir = input_vector
+	
+	# 其他控制
 	if is_on_floor():
-		MoveAcc = STAND_ACC
-		MoveSpeed = STAND_SPEED
+		UpdateMovement(MovementEnum.Stand)
+
+		# if Input.is_action_pressed("Ctrl"):
+		# 	UpdateMovement(MovementEnum.Squat)
+		# else:
 
 		if Input.is_action_just_pressed("Space"):
 			velocity -= JUMP_SPEED * GRAVITY_DIR
 		
 	else:
-		MoveSpeed = AIR_SPEED
-		MoveAcc = AIR_ACC
-		
-	SmoothMove(_delta)
+		UpdateMovement(MovementEnum.Air)
+	
+	# print(MoveSpeed, MoveAcc, MovementStatus)
+	
