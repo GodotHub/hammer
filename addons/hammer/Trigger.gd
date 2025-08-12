@@ -4,16 +4,13 @@ class_name Trigger
 
 var Status:bool = false
 
-@export var OrganList:Array[Organ]
 
-func _physics_process(delta: float) -> void:
-    pass
+
+func _physics_process(_delta: float) -> void:
+    TriggerLoop(_delta)
     
 
-
+## 状态检测主循环
+## 重载此函数进行配置
 func TriggerLoop(_delta:float):
-    for organ in OrganList:
-        if organ.Reversal:
-            organ.Status = !Status
-        else:
-            organ.Statuss = Status
+    pass

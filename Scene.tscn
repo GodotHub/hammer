@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://jwsyx0txfeox"]
+[gd_scene load_steps=23 format=3 uid="uid://jwsyx0txfeox"]
 
 [ext_resource type="Script" uid="uid://cmc1k5o7mus65" path="res://addons/hammer/Player.gd" id="1_t6lng"]
 [ext_resource type="Script" uid="uid://dm0oviqoew42y" path="res://addons/hammer/Character.gd" id="2_4cvuw"]
 [ext_resource type="Script" uid="uid://tdpkyvrvi4vc" path="res://addons/hammer/PickTool.gd" id="2_j2eoc"]
+[ext_resource type="Script" uid="uid://c1x7fn3bfd1rd" path="res://addons/hammer/TriggerArea.gd" id="4_66br4"]
+[ext_resource type="Script" uid="uid://nkx66sqcp7jn" path="res://addons/hammer/OrganPanel.gd" id="5_66br4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t6lng"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -49,6 +51,13 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mckg"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_66br4"]
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_66br4"]
+size = Vector3(2, 0.2, 2)
 
 [node name="Scene" type="Node3D"]
 
@@ -75,7 +84,6 @@ current = true
 
 [node name="Ray" type="RayCast3D" parent="Player/Camera"]
 target_position = Vector3(0, 0, -10)
-collide_with_areas = true
 
 [node name="Marker" type="Marker3D" parent="Player/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
@@ -149,9 +157,31 @@ shape = SubResource("BoxShape3D_j2eoc")
 [node name="Mesh" type="MeshInstance3D" parent="Rigid"]
 mesh = SubResource("BoxMesh_7mckg")
 
-[node name="Area" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
-metadata/_edit_group_ = true
+[node name="Trigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+script = ExtResource("4_66br4")
+metadata/_custom_type_script = "uid://c1x7fn3bfd1rd"
 
-[node name="Shape" type="CollisionShape3D" parent="Area"]
+[node name="Shape" type="CollisionShape3D" parent="Trigger"]
 shape = SubResource("BoxShape3D_7mckg")
+
+[node name="Organ" type="Node3D" parent="." node_paths=PackedStringArray("PanelNode", "PointNode", "TriggerList")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+script = ExtResource("5_66br4")
+PanelNode = NodePath("Static")
+PointNode = NodePath("Marker")
+TriggerList = [NodePath("../Trigger")]
+
+[node name="Static" type="StaticBody3D" parent="Organ"]
+
+[node name="Mesh" type="MeshInstance3D" parent="Organ/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_66br4")
+skeleton = NodePath("../..")
+
+[node name="Shape3D" type="CollisionShape3D" parent="Organ/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_66br4")
+
+[node name="Marker" type="Marker3D" parent="Organ"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)

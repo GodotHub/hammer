@@ -60,7 +60,11 @@ var MoveAcc:float = SQUAT_ACC ## 移动加速度
 ## 工具列表
 @export var ToolList:Array[Tool]
 
+
 func _physics_process(_delta: float) -> void:
+	PhysicsLoop(_delta)
+
+func PhysicsLoop(_delta:float):
 	if EnableNav:
 		Navigation(_delta)
 	Move(_delta)
