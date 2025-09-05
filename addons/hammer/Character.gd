@@ -1,6 +1,6 @@
 extends CharacterBody3D
 class_name Character
-
+## 角色节点
 
 enum MovementEnum {Air, Stand, Squat}
 ## 移动状态
@@ -15,9 +15,9 @@ enum MovementEnum {Air, Stand, Squat}
 ## 重力方向
 @export var GRAVITY_DIR:Vector3 = Vector3.DOWN
 ## 重力加速度
-@export var GRAVITY_ACC:float = 9.8
+@export var GRAVITY_ACC:float = 10
 ## 跳跃速度
-@export var JUMP_SPEED:float = 5
+@export var JUMP_SPEED:float = 4
 
 @export_group("Move")
 @export_subgroup("Air")
@@ -69,7 +69,7 @@ func PhysicsLoop(_delta:float):
 		Navigation(_delta)
 	Move(_delta)
 
-	Tool(_delta)
+	ToolLoop(_delta)
 
 ## 更新移动状态
 func UpdateMovement(_movement_status:MovementEnum = -1):
@@ -106,7 +106,7 @@ func Navigation(_delta:float) -> void:
 			MoveAcc = STAND_ACC
 			MoveDir = (NavAgent.get_next_path_position() - global_position).normalized()
 
-## 更改工具
+## 切换工具
 func ChangedTool(_current_tool:int):
 	if _current_tool >= ToolList.size():
 		return
@@ -126,15 +126,12 @@ func AddTool(_tool:Tool):
 	if ToolList.has(_tool):return
 	if not _tool.SelfCheck():return
 	ToolList.append(_tool)
-	
 
 ## 移除工具
 func RemoveTool(_tool:Tool):
 	ToolList.erase(_tool)
 
-func Tool(_delta:float):
+
+func ToolLoop(_delta:float):
 	if CurrentTool and ToolRay:
 		CurrentTool.ToolLoop(_delta, self, ToolRay)
-
-
-

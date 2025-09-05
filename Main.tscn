@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwsyx0txfeox"]
+
+[ext_resource type="Script" uid="uid://bp8b7cc5hxhu8" path="res://addons/hammer/Scene.gd" id="1_3dxm6"]
+[ext_resource type="Script" uid="uid://bsilnrdl31moo" path="res://addons/hammer/Option.gd" id="3_r0du0"]
+[ext_resource type="Script" uid="uid://87nxlmwp3fbt" path="res://addons/hammer/Describe.gd" id="6_20pc6"]
+
+[node name="Scene" type="Node"]
+script = ExtResource("1_3dxm6")
+ScenePath = PackedStringArray("res://Scene/Scene1.tscn")
+metadata/_custom_type_script = "uid://bp8b7cc5hxhu8"
+
+[node name="Describe" type="Control" parent="." node_paths=PackedStringArray("TextNode")]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_20pc6")
+TextNode = NodePath("Text")
+metadata/_custom_type_script = "uid://87nxlmwp3fbt"
+
+[node name="Text" type="RichTextLabel" parent="Describe"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+
+[node name="Option" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_r0du0")
+MouseSensitivity = null
+metadata/_custom_type_script = "uid://bsilnrdl31moo"

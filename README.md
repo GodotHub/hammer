@@ -9,38 +9,11 @@ Enable developers to focus on 3D game development, making Godot as simple as Ham
 > The frequency of English updates may be slightly slower than that of Chinese.
 
 ## DevelopmentRoadmap
-
-### NodeFeatures
-* [ ] OptionNode
-* [ ] PlayerNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
-
-### InspectorFeatures
-* [ ] OptionNode
-* [ ] NetWorkNode
-* [ ] CharacterNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
-
-### FeatureCompletion
-* [ ] OptionNode
-* [ ] NetWorkNode
-* [ ] CharacterNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
-
-## DevelopmentStatus
-* [ ] OptionNode
-* [ ] NetWorkNode
-* [ ] CharacterNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
+* [ ] Option
+* [x] Character
+* [x] Player
+* [x] Organ
+* [x] Trigger
+* [x] Tool
+* [x] Scene
+* [ ] Describe

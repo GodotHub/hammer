@@ -1,47 +1,31 @@
 # Hammer
-
 使Godot像Hammer编辑器一样简单易用，让开发者专注于3D游戏本体开发。
 
 [English](https://github.com/godothub/hammer)
 &nbsp;&nbsp;&nbsp;&nbsp;
 [中文](https://github.com/godothub/hammer/blob/master/README.ZH.md)  
 
-<!-- ## 节点结构 -->
-
 ## 开发线路
 
-### 节点功能
-* [ ] OptionNode
-* [x] CharacterNode
-* [x] PlayerNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
-
-### 检查器功能
-* [ ] OptionNode
-* [ ] PlayerNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
+### 基础功能
+* [ ] Option
+* [x] Character
+* [x] Player
+* [x] Organ
+* [x] Trigger
+* [x] Tool
+* [x] Scene
+* [x] Describe
 
 ### 功能完善
-* [ ] OptionNode
-* [ ] PlayerNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
-
-## 可用节点
-* [ ] OptionNode
-* [ ] PlayerNode
-* [ ] InteractNode
-* [ ] ToolNode
-* [ ] SceneNode
-* [ ] CaptionNode
+* [ ] Option
+* [ ] Character
+* [ ] Player
+* [ ] Organ
+* [ ] Trigger
+* [ ] Tool
+* [ ] Scene
+* [ ] Describe
 
 
 ## 命名规范

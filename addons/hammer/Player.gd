@@ -23,8 +23,7 @@ func _physics_process(_delta: float) -> void:
 		PlayerMove(_delta)
 	Move(_delta)
 
-
-	Tool(_delta)
+	ToolLoop(_delta)
 
 ## 玩家旋转
 func PlayerRotate(_event: InputEvent) -> void:
@@ -33,8 +32,8 @@ func PlayerRotate(_event: InputEvent) -> void:
 		HeadNode.rotate_x(deg_to_rad(- _event.relative.y * MouseSen))
 		HeadNode.rotation.x = clamp(HeadNode.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+## 玩家移动
 func PlayerMove(_delta:float) -> void:
-	# 玩家移动
 	var input_vector:Vector3 = Vector3.ZERO
 	var body_basis:Basis = global_basis
 

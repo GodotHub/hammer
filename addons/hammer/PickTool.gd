@@ -1,11 +1,16 @@
 extends Tool
 class_name PickTool
+## 抓取交互工具
 
+## 抓取或交互实体
 var PickObject:RigidBody3D
 
+## 目标抓取位置
 @export var ObjectPos:Marker3D
 
+## 物体加速度
 @export var OBJECT_ACC:float = 5000
+## 释放时最大速度
 @export var RELEASE_SPEED:float = 5
 
 func SelfCheck() -> bool:
@@ -23,8 +28,6 @@ func ToolLoop(_delta: float, _parent: Character, _ray: RayCast3D) -> void:
 			var velocity_length:float = PickObject.linear_velocity.length()
 			if velocity_length > RELEASE_SPEED:
 				PickObject.linear_velocity = velocity_normal * RELEASE_SPEED
-
-
 			_parent.ToolLock = false
 			PickObject = null
 		elif _ray.is_colliding():
