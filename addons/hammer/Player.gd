@@ -6,11 +6,6 @@ class_name Player
 @export var HeadNode:Node3D
 
 func _ready() -> void:
-	if not HeadNode:
-		print("需要配置 HeadNode")
-		queue_free()
-		return
-	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(_event: InputEvent) -> void:
@@ -37,13 +32,13 @@ func PlayerMove(_delta:float) -> void:
 	var input_vector:Vector3 = Vector3.ZERO
 	var body_basis:Basis = global_basis
 
-	if Input.is_action_pressed("W"):
+	if Input.is_action_pressed("Forward"):
 		input_vector += -body_basis.z
-	if Input.is_action_pressed("S"):
+	if Input.is_action_pressed("Back"):
 		input_vector += body_basis.z
-	if Input.is_action_pressed("A"):
+	if Input.is_action_pressed("Left"):
 		input_vector += -body_basis.x
-	if Input.is_action_pressed("D"):
+	if Input.is_action_pressed("Right"):
 		input_vector += body_basis.x
 
 	MoveDir = input_vector
@@ -52,15 +47,8 @@ func PlayerMove(_delta:float) -> void:
 	if is_on_floor():
 		UpdateMovement(MovementEnum.Stand)
 
-		# if Input.is_action_pressed("Ctrl"):
-		# 	UpdateMovement(MovementEnum.Squat)
-		# else:
-
-		if Input.is_action_just_pressed("Space"):
+		if Input.is_action_just_pressed("Jump"):
 			velocity -= JUMP_SPEED * GRAVITY_DIR
-		
 	else:
 		UpdateMovement(MovementEnum.Air)
-	
-	# print(MoveSpeed, MoveAcc, MovementStatus)
 	

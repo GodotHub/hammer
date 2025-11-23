@@ -19,10 +19,10 @@ func SelfCheck() -> bool:
 	return true
 
 ## 功能主循环
-func ToolLoop(_delta: float, _parent: Character, _ray: RayCast3D) -> void:
+func ToolLoop(_delta: float, _parent: Node3D, _ray: RayCast3D) -> void:
 	if PickObject:
 		PickObject.linear_velocity = (ObjectPos.global_position - PickObject.global_position) * _delta * OBJECT_ACC
-	if Input.is_action_just_pressed("E"):
+	if Input.is_action_just_pressed("Use"):
 		if PickObject:
 			var velocity_normal:Vector3 = PickObject.linear_velocity.normalized()
 			var velocity_length:float = PickObject.linear_velocity.length()

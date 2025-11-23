@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://rle78rtjxa4w"]
+[gd_scene load_steps=20 format=3 uid="uid://rle78rtjxa4w"]
 
-[ext_resource type="Script" uid="uid://c1x7fn3bfd1rd" path="res://addons/hammer/TriggerArea.gd" id="1_88sdf"]
-[ext_resource type="Script" uid="uid://nkx66sqcp7jn" path="res://addons/hammer/OrganPanel.gd" id="2_pyta8"]
-[ext_resource type="Script" uid="uid://dm0oviqoew42y" path="res://addons/hammer/Character.gd" id="3_xawni"]
-[ext_resource type="PackedScene" uid="uid://dc5hdt84wkldm" path="res://Player.tscn" id="4_pyta8"]
+[ext_resource type="Script" uid="uid://c1x7fn3bfd1rd" path="res://Module/TriggerArea.gd" id="1_88sdf"]
+[ext_resource type="Script" uid="uid://nkx66sqcp7jn" path="res://Module/OrganPanel.gd" id="2_pyta8"]
+[ext_resource type="Script" uid="uid://dm0oviqoew42y" path="res://addons/hammer/Core/Character.gd" id="3_xawni"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j2eoc"]
 friction = 0.8
@@ -158,6 +157,3 @@ debug_enabled = true
 
 [node name="Marker" type="Marker3D" parent="Character/NavAgent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -8)
-
-[node name="Player" parent="." instance=ExtResource("4_pyta8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
